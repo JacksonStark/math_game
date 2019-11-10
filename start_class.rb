@@ -20,12 +20,12 @@ class Start
 
         # Requesting player input
         puts "\n\n--- NEW TURN ---"
-        puts "#{@player1.name}: What does #{@question.num1} + #{@question.num2} equal?"
+        puts "😎 #{@player1.name}: What does #{@question.num1} + #{@question.num2} equal?"
         print '> '
-        @choice = gets.chomp
+        @answer = gets.chomp
 
         # Correct Answer
-        if @choice == @question.sum.to_s
+        if @answer == @question.sum.to_s
           puts "#{@player1.name}: ✅ Hey Hey! You smart fella :)"
 
           # Incorrect Answer
@@ -36,7 +36,7 @@ class Start
 
         # SWITCHING PLAYERS
         @player_turn = 2
-        puts "😎 P1: #{@player1.lives}/3 vs 🥺  P2: #{@player2.lives}/3"
+        puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
 
 
 
@@ -48,12 +48,12 @@ class Start
 
         # Requesting player input
         puts "\n\n--- NEW TURN ---"
-        puts "#{@player2.name}: What does #{@question.num1} + #{@question.num2} equal?"
+        puts "🥺  #{@player2.name}: What does #{@question.num1} + #{@question.num2} equal?"
         print '> '
-        @choice = gets.chomp
+        @answer = gets.chomp
 
         # Correct Answer
-        if @choice == @question.sum.to_s
+        if @answer == @question.sum.to_s
           puts "#{@player2.name}: ✅ Hey Hey! You smart fella :)"
 
           # Incorrect Answer
@@ -72,9 +72,9 @@ class Start
   # Check players are still alive
   def life_check(name, lives)
     if lives.zero?
-      puts "😵 #{name} has died. We have a winner!!!"
-      puts "🏆 The final score was P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
-      puts '--- GAME OVER ---'
+      puts "\n\n\n😵 #{name} has died. We have a winner!!!"
+      puts "\n🏆 The final score was 😎 P1: #{@player1.lives}/3 vs 🥺  P2: #{@player2.lives}/3"
+      puts "\n--- GAME OVER ---\n\n"
       exit(0)
     end
     puts "#{name}: 🔴 Wake up buddy. This is basic math, c'mon :("
